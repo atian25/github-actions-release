@@ -10,5 +10,5 @@ action "github-actions-release" {
 
 action "act2" {
   uses = "./"
-  args = "deploy --a=b"
+  args = "deploy --a=bb"
 }
