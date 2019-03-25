@@ -7,8 +7,7 @@ const tools = new Toolkit({
 
 console.log(tools.arguments);
 
-tools.command('check', async (args, match) => {
-  console.log(args)
-  // -> { app: 'example', container: 'node:alpine' }
-});
+console.log('@@@event', JSON.stringify(tools.context.event, null, 2));
+
+console.log('@@@payload', JSON.stringify(tools.context.payload, null, 2));
 
