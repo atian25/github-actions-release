@@ -1,6 +1,6 @@
 workflow "Unit Test" {
-  on = "push"
   resolves = ["github-actions-release", "act2"]
+  on = "pull_request"
 }
 
 action "github-actions-release" {
