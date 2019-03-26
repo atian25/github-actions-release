@@ -5,7 +5,7 @@ workflow "Unit Test" {
 
 workflow "Test2" {
   resolves = [ "act2"]
-  on = "pull"
+  on = "push"
 }
 
 action "github-actions-release" {
