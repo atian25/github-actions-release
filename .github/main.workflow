@@ -1,6 +1,11 @@
 workflow "Unit Test" {
-  resolves = ["github-actions-release", "act2"]
+  resolves = ["github-actions-release"]
   on = "pull_request"
+}
+
+workflow "Test2" {
+  resolves = [ "act2"]
+  on = "pull"
 }
 
 action "github-actions-release" {
