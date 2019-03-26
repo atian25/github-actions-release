@@ -8,3 +8,14 @@ action "github-actions-release-check" {
   args = "check --test=abc"
   secrets = ["GITHUB_TOKEN"]
 }
+
+workflow "on push" {
+  resolves = ["github-actions-release"]
+  on = "push"
+}
+
+action "github-actions-release" {
+  uses = "./"
+  args = "check --test=abc"
+  secrets = ["GITHUB_TOKEN"]
+}

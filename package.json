@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "GitHub actions for release matters",
   "dependencies": {
-    "actions-toolkit": "^1.7.0"
+    "actions-toolkit": "^1.7.0",
+    "git-changelog-parser": "^1.0.0",
+    "remark": "^10.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
