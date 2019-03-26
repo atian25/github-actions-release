@@ -2,7 +2,7 @@
 
 const { Toolkit } = require('actions-toolkit');
 const tools = new Toolkit({
-  // event: [ 'push', 'pull_requests' ],
+  event: [ 'pull_request' ],
 });
 
 async function run() {
