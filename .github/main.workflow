@@ -1,21 +1,10 @@
-workflow "Unit Test" {
-  resolves = ["github-actions-release"]
+workflow "on pull_request" {
+  resolves = ["github-actions-release-check"]
   on = "pull_request"
 }
 
-workflow "Test2" {
-  resolves = [ "act2"]
-  on = "push"
-}
-
-action "github-actions-release" {
+action "github-actions-release-check" {
   uses = "./"
   args = "check --test=abc"
-  secrets = ["GITHUB_TOKEN"]
-}
-
-action "act2" {
-  uses = "./"
-  args = "deploy --a=bb"
   secrets = ["GITHUB_TOKEN"]
 }
