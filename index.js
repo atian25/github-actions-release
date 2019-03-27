@@ -17,7 +17,7 @@ async function run() {
 
   console.log('@@@pkg', pkg);
 
-  const contents = tools.getFile('index.js');
+  const contents = tools.getFile('.git/HEAD');
 
   console.log('@@@contents', contents);
 
