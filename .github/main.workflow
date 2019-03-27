@@ -30,10 +30,11 @@ action "github-actions-release" {
 
 workflow "on check_run" {
   on = "check_run"
-  resolves = ["GitHub Action for npm"]
+  resolves = ["github-actions-release-check"]
 }
 
-action "GitHub Action for npm" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  args = "info egg"
+workflow "on check_suite" {
+  on = "check_suite"
+  resolves = ["github-actions-release-check"]
 }
+
