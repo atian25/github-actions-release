@@ -8,33 +8,3 @@ action "github-actions-release-check" {
   args = "check --test=abc"
   secrets = ["GITHUB_TOKEN"]
 }
-
-workflow "on push" {
-  resolves = [
-    "github-actions-release",
-  ]
-  on = "push"
-}
-
-action "only on master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
-
-action "github-actions-release" {
-  needs = ["only on master"]
-  uses = "./"
-  args = "check --test=abc"
-  secrets = ["GITHUB_TOKEN"]
-}
-
-workflow "on check_run" {
-  on = "check_run"
-  resolves = ["github-actions-release-check"]
-}
-
-workflow "on check_suite" {
-  on = "check_suite"
-  resolves = ["github-actions-release-check"]
-}
-
