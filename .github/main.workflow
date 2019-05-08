@@ -5,6 +5,6 @@ workflow "on pull_request" {
 
 action "github-actions-release-check" {
   uses = "./"
-  args = "check --test=abc"
+  args = "check --test=abcd"
   secrets = ["GITHUB_TOKEN"]
 }
